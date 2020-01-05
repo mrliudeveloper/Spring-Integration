@@ -1,0 +1,6 @@
+server:
+  port: 9091
+spring:
+  activemq:
+    broker-url: tcp://localhost:61616
+    in-memory: false #true表示使用连接池，false则连接服务器
