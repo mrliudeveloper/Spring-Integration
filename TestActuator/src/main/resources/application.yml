@@ -1,0 +1,21 @@
+management:
+  endpoints: 
+    web:
+      cors:
+        allowed-origins: '*' #跨域访问支持
+        allowed-methods: #允许跨域访问的方法
+        - GET,POST
+      base-path: /act #端点映射
+      exposure:
+        include: '*' #使用include、exclude来决定隐藏和暴露出的内容
+    enabled-by-default: false #修改全局端口默认配置
+  endpoint:
+    health: 
+      enabled: true
+    info:
+      enabled: true #暴露信息
+    shutdown:
+      enabled: true #启用端点
+  server:
+    port: 8081 #为-1时不允许远程管理连接
+    #address: 127.0.0.1 #只能内部网络监听
