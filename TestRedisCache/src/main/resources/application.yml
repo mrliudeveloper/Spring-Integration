@@ -1,0 +1,32 @@
+#服务端口号
+server:
+  port: 8080
+#数据库配置
+spring:
+  datasource:
+    username: root
+    password: 109221
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  thymeleaf:
+    cache: false
+  redis:
+    host: 192.168.179.4
+    database: 0
+    port: 6379
+    password: 
+    timeout: 1200
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+
+#日志级别DEBUG
+logging:
+  level:
+    com.mrliu.mapper: DEBUG
+#别名配置
+mybatis:
+  type-aliases-package: com.mrliu.po
