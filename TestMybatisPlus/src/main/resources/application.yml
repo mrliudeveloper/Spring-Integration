@@ -1,0 +1,18 @@
+#服务端口号
+server:
+  port: 8080
+#数据库配置
+spring:
+  datasource:
+    username: root
+    password: 109221
+    url: jdbc:mysql://localhost:3306/mp?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#日志级别DEBUG
+logging:
+  level:
+    com.mrliu.mapper: DEBUG
+#开启驼峰命名规则
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
