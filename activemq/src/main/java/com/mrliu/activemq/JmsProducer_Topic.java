@@ -1,6 +1,7 @@
 package com.mrliu.activemq;
 
 import javax.jms.Connection;
+import javax.jms.DeliveryMode;
 import javax.jms.JMSException;
 import javax.jms.MessageProducer;
 import javax.jms.Queue;
@@ -22,7 +23,7 @@ public class JmsProducer_Topic {
 		//2.通过连接工厂获得connection连接
 		Connection connection = activeMQXAConnectionFactory.createConnection();
 		//3.启动访问
-		connection.start();
+		//connection.start();
 		//4.创建会话Session
 		//两个参数：第一个叫事务，第二个叫签收
 		Session session = connection.createSession(false,Session.AUTO_ACKNOWLEDGE);
@@ -32,6 +33,8 @@ public class JmsProducer_Topic {
 		
 		//6.创建消息的生产者producer
 		MessageProducer messageProducer = session.createProducer(topic);
+		messageProducer.setDeliveryMode(DeliveryMode.PERSISTENT);
+		connection.start();
 		//7.使用生产者产生3条消息发送到Topic主题里面
 		for (int i = 0; i <6; i++) {
 			//8.创建消息
