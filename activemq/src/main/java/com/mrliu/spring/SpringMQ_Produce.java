@@ -19,7 +19,7 @@ public class SpringMQ_Produce {
 		SpringMQ_Produce produce=(SpringMQ_Produce) act.getBean("springMQ_Produce");
 		
 		produce.jmsTemplate.send((session)->{
-			TextMessage textMessage = session.createTextMessage("Spring && ActiveMQ");
+			TextMessage textMessage = session.createTextMessage("Spring333333ActiveMQ3333333333");
 			return textMessage;
 		});
 		System.out.println("send task over..");

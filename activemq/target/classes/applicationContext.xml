@@ -35,4 +35,14 @@
 				<bean class="org.springframework.jms.support.converter.SimpleMessageConverter"/>
 			</property>
 		</bean>	
+		
+		
+		<bean id="jmsContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+			<property name="connectionFactory" ref="jmsFactory"/>
+			<property name="destination" ref="destinationTopic"></property>
+			<property name="messageListener" ref="myMessageListener"></property>
+		</bean>
+		<!-- 
+		<bean id="myMessageListener" class="com.mrliu.spring.MyMessageListener"></bean>
+		 -->
 </beans>

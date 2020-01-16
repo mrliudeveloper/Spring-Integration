@@ -16,7 +16,7 @@ public class SpringMQ_Consumer {
 		ApplicationContext act=new ClassPathXmlApplicationContext("applicationContext.xml");
 		SpringMQ_Consumer consumer =(SpringMQ_Consumer)act.getBean("springMQ_Consumer");
 		String receiveAndConvert = (String) consumer.jmsTemplate.receiveAndConvert();
-		System.out.println("消费者收到的消息"+receiveAndConvert);
+		System.out.println("消费者收到的消息:"+receiveAndConvert);
 	}
 	
 }
